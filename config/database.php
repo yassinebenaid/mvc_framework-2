@@ -1,7 +1,6 @@
 <?php
 
 return [
-    "default" => "mysql",
     "mysql" => [
         "type" => "mysql",
         "host" => "localhost",

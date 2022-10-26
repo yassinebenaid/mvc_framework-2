@@ -3,12 +3,12 @@
 namespace Spoot\Provider;
 
 use Spoot\Application;
-use Spoot\Routing\Router;
+use Spoot\Support\Config;
 
-class RoutingProvider
+class ConfigProvider
 {
     public function bind(Application $app)
     {
-        $app->bind(Router::class, fn () => new Router);
+        $app->bind('config', fn () => new Config);
     }
 }

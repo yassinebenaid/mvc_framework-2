@@ -44,7 +44,8 @@ class Route
 
     public function run()
     {
-        return call_user_func($this->callback);
+        // return call_user_func($this->callback);
+        return app()->call($this->callback);
     }
 
 

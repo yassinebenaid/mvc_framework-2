@@ -4,11 +4,17 @@ namespace Spoot;
 
 use Dotenv\Exception\InvalidFileException;
 use InvalidArgumentException;
+use Spoot\Routing\Router;
 
 class Container
 {
     private array $binding = [];
     private array $resolved = [];
+
+    public function __construct()
+    {
+        $this->bind("router", fn () => new Router);
+    }
 
     public function bind(string $alias, callable $callback): static
     {

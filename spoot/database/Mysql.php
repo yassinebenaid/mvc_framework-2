@@ -39,7 +39,7 @@ class Mysql
             self::$factory->addConnector("mysql", fn ($config) => new MysqlConnection($config));
         }
 
-        $config = require dirname(__DIR__, 2) . "/config/database.php";
-        return self::$factory->connect($config[$config["default"]]);
+        $config = app("config")->get("database.mysql");
+        return self::$factory->connect($config);
     }
 }
